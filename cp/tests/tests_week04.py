@@ -1,11 +1,8 @@
-from unitgrade import Report
+from unitgrade import UTestCase, Report
+import unittest
+from unittest.mock import patch
 import cp
-from unitgrade import UTestCase
-import unittest
 import io
-import unittest
-from unittest.mock import patch, call
-
 
 class Palindrome(UTestCase):
     def test_is_palindrome(self):
@@ -18,7 +15,6 @@ class Palindrome(UTestCase):
 
 
 class Bug(UTestCase):
-
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_nice_sign(self, mock_stdout):
         from cp.ex04.bug import nice_sign
@@ -49,8 +45,8 @@ class Bug(UTestCase):
         self.assertEqual(l2, "| I have written my last bug |")
         self.assertEqual(l3, "------------------------------")
 
-class Math(UTestCase):
 
+class Math(UTestCase):
     def test_square_root(self):
         from cp.ex04.mathematics import square_root
         self.assertAlmostEqual(square_root(9), 3, places=3)
@@ -62,7 +58,6 @@ class Math(UTestCase):
 
 
 class Parenthesis(UTestCase):
-
     def test_matching(self):
         from cp.ex04.parenthesis import matching
         self.assertTrue(matching('3x(y+x)'))
@@ -105,6 +100,7 @@ class Dialogue(UTestCase):
         out = mock_stdout.getvalue()
         self.assertEqual(out.strip(), "How are you doing?\nStill stuck on my 02002 programming problems")
 
+
 class Prefix(UTestCase):
     def test_common_prefix(self):
         from cp.ex04.prefix import common_prefix
@@ -125,7 +121,6 @@ class Week04Tests(Report):
     version = 1.0
     url = "https://gitlab.compute.dtu.dk/cp/02002students/-/blob/master/cp/tests"
     pack_imports = [cp]
-
     questions = [
                 (Math, 10),
                 (Palindrome, 10),

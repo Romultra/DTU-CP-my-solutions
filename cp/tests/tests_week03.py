@@ -1,7 +1,7 @@
-from unitgrade import Report
+from unitgrade import UTestCase, Report
+import unittest.mock
+import io
 import cp
-from unitgrade import UTestCase
-
 
 class Week03CompareNumbers(UTestCase):
     def test_compare_numbers(self):
@@ -70,9 +70,7 @@ class Week03BACCalculator(UTestCase):
         result = bac_calculator(0.021, 70., "female", 2.)
         self.assertEqual(result,0.020545454545454547)
 
-
 class AckermannTestCase(UTestCase):
-
     def test_ackermann(self):
         from cp.ex03.ackermann import ackermann
         self.assertEqual(ackermann(0, 0), 1)
@@ -86,11 +84,8 @@ class AckermannTestCase(UTestCase):
         self.assertEqual(ackermann(3, 0), 5)
         self.assertEqual(ackermann(3, 1), 13)
         self.assertEqual(ackermann(3, 2), 29)
-        # Add more test cases as needed
-
 
 class ExponentialTestCase(UTestCase):
-
     def test_exponential_with_positive_power(self):
         from cp.ex03.exponential import exponential
         self.assertEqual(exponential(2, 0), 1.0)
@@ -98,7 +93,6 @@ class ExponentialTestCase(UTestCase):
         self.assertEqual(exponential(2, 2), 4.0)
         self.assertEqual(exponential(3, 3), 27.0)
         self.assertEqual(exponential(5, 4), 625.0)
-        # Add more test cases as needed
 
     def test_exponential_with_negative_power(self):
         from cp.ex03.exponential import exponential
@@ -106,14 +100,12 @@ class ExponentialTestCase(UTestCase):
         self.assertEqual(exponential(2, -2), 0.25)
         self.assertAlmostEqual(exponential(3, -3), 0.037037037037)
         self.assertAlmostEqual(exponential(5, -4), 5**(-4) )
-        # Add more test cases as needed
 
     def test_exponential_with_zero_power(self):
         from cp.ex03.exponential import exponential
         self.assertEqual(exponential(2, 0), 1.0)
         self.assertEqual(exponential(3, 0), 1.0)
         self.assertEqual(exponential(5, 0), 1.0)
-        # Add more test cases as needed
 
 
 class HeartAttackTests(UTestCase):
@@ -129,9 +121,6 @@ class HeartAttackTests(UTestCase):
         self.assertEqual(heart_attack(45, 70, True), "high")
         self.assertEqual(heart_attack(11, 70, True), "high")
 
-
-import unittest.mock
-import io
 class SolarPanelTests(UTestCase):
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_maybe(self, mock_stdout):
@@ -171,7 +160,7 @@ class SolarPanelTests(UTestCase):
         self.assertEqual(out.strip().lower(), "sure")
 
 
-class Week03Tests(Report): #40 total.
+class Week03Tests(Report):
     title = "Tests for week 03"
     version = 1.0
     url = "https://gitlab.compute.dtu.dk/cp/02002students/-/blob/master/cp/tests"

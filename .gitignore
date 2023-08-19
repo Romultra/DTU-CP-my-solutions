@@ -17,8 +17,8 @@ cp/ex05
 cp/ex06
 cp/ex07
 cp/ex08
-cp/ex09
-cp/ex10
+#cp/ex09
+#cp/ex10
 cp/ex11
 cp/ex12
 cp/exam
@@ -26,5 +26,5 @@ cp/project1
 # cp/project2
 cp/project3
 cp/project4
-cp/project5
+#cp/project5
 cp/project6

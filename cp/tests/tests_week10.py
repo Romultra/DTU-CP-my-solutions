@@ -1,16 +1,9 @@
-from unitgrade import Report
+from unitgrade import UTestCase, Report
 import cp
-from unitgrade import UTestCase
-
 
 class TestPerson(UTestCase):
-    # Test Person class
     def test_init(self):
         from cp.ex10.hospital import Person
-        # person = Person("John Doe", 35, "m")
-        # self.assertEqual(person.name, "John Doe")
-        # self.assertEqual(person.age, 35)
-        # self.assertEqual(person.gender, "m")
         self.assertRaises(ValueError, Person, "John Doe", 35, "z")
 
     def test_str(self):
@@ -68,8 +61,6 @@ class TestDoctor(UTestCase):
         self.assertEqual(doctor.treatment_cost(patient), 100)
         patient = Patient("John Doe", 35, "m", "toothache")
         self.assertEqual(doctor.treatment_cost(patient), 200)
-
-
 
 class Week10Tests(Report): 
     title = "Tests for week 10"
