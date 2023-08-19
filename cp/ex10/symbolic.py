@@ -34,7 +34,7 @@ class Expression:
         """
         return "Remember to implement the __str__()-function."  
 
-# TODO: 246 lines missing. 
+# TODO: Code has been removed from here. 
 
 if __name__ == "__main__":
     # construct some symbolic expressions
