@@ -68,6 +68,8 @@ class Week11StableMeasurements(UTestCase):
 
 class Week11Tests(Report): #30 total.
     title = "Tests for week 11"
+    version = 0.1
+    url = "https://gitlab.compute.dtu.dk/cp/02002students/-/blob/master/cp/tests"
     pack_imports = [cp]
     individual_imports = []
     questions = [

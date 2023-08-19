@@ -13,6 +13,8 @@ class HelloWorld2(UTestCase):
 
 class Week07Tests(Report): #240 total.
     title = "Tests for week 07"
+    version = 0.1
+    url = "https://gitlab.compute.dtu.dk/cp/02002students/-/blob/master/cp/tests"
     pack_imports = [cp]
     individual_imports = []
     questions = [
