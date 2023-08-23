@@ -61,7 +61,8 @@ def add(v1 : Vector, v2 : Vector) -> Vector:
     :param v2: The second vector.
     :return: Their sum :math:`\mathbf{v}_1+\mathbf{v}_2`
     """
-    vector_sum = make_vector(v1.x + v2.x, v1.y+v2.y)
+    # TODO: 1 lines missing.
+    raise NotImplementedError("Use make_vector to make create the new vector.")
     return vector_sum
 
 def sub(v1 : Vector, v2 : Vector) -> Vector:
