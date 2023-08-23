@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 class Vector:
     """A class that represents a Vector, defined by the endpoint :math:`(x,y)`."""
 
-
 def make_vector(x : float, y : float) -> Vector:
     """Create a new Vector object with end-points :math:`(x,y)`.
 
@@ -30,7 +29,8 @@ def print_vector(v: Vector):
 
     :param v: A vector object instance.
     """
-    print(f"{(v.x, v.y)}")
+    # TODO: 1 lines missing.
+    raise NotImplementedError("print(.. format the print statement here .. )")
 
 def dot(v1 : Vector, v2 : Vector) -> float:
     r"""Compute the dot-product of ``v1`` and ``v2``, i.e. :math:`\mathbf{v}_1 \cdot \mathbf{v}_2`.
@@ -39,7 +39,9 @@ def dot(v1 : Vector, v2 : Vector) -> float:
     :param v2: The second vector,
     :return: The dot product of ``v1`` and ``v2`` (as a ``float``)
     """
-    return v1.x * v2.x + v1.y * v2.y
+    # TODO: 1 lines missing.
+    raise NotImplementedError("Insert your solution and remove this error.")
+    return dot_product
 
 def scale(s : float, v : Vector) -> Vector:
     r"""Scale the vector :math:`\mathbf{v}` by a factor of :math:`s`.
@@ -59,7 +61,8 @@ def add(v1 : Vector, v2 : Vector) -> Vector:
     :param v2: The second vector.
     :return: Their sum :math:`\mathbf{v}_1+\mathbf{v}_2`
     """
-    return make_vector(v1.x + v2.x, v1.y+v2.y)
+    vector_sum = make_vector(v1.x + v2.x, v1.y+v2.y)
+    return vector_sum
 
 def sub(v1 : Vector, v2 : Vector) -> Vector:
     r"""Subtract the two vectors ``v1`` and ``v2`` and return the difference as a ``Vector`` object.
@@ -68,7 +71,8 @@ def sub(v1 : Vector, v2 : Vector) -> Vector:
     :param v2: The second vector.
     :return: Their difference :math:`\mathbf{v}_1-\mathbf{v}_2`
     """
-    diff = add(v1, scale(-1, v2))
+    # TODO: 1 lines missing.
+    raise NotImplementedError("Remember that x - y = x + (-1) * y.")
     return diff
 
 
@@ -159,7 +163,7 @@ def intersect(l1: LineSegment, l2: LineSegment) -> Vector:
     :param l2: Second line
     :return: A ``Vector`` representing the point of intersection.
     """
-    # TODO: 1 lines missing.
+    # TODO: Code has been removed from here.
     raise NotImplementedError("Insert your solution and remove this error.")
     return p
 

@@ -4,10 +4,8 @@ import math
 class Sin:
     """A class that represents the sinus-function, i.e. sin(x) where x can be any expression."""
 
-
 class Cos:
     """A class that represents the cosine-function, i.e. cos(x) where x can be any expression."""
-
 
 class Variable:
     """A class that represents a (named) variable such as ``x``, ``y``, ``x2``, etc."""
@@ -67,7 +65,6 @@ if __name__ == "__main__":
     exp = sine(cosine(sine(sine(make_symbol('x')))))
     print( format_expression(exp) )
     # print(format_expression(exp), "evaluated in x=0 is", evaluate(exp, 0) )
-    pass
 
     from sympy import sin, cos, symbols, evaluate, Symbol
     evaluate_expression = sin.evalf  # Get the evaluation-function. Ignore the right-hand side for now.
