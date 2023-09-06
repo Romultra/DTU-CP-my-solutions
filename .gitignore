@@ -13,18 +13,22 @@ cache.db
 **/unitgrade_data/dont_check_remote.lock
 
 ######################## Comment these out upon release. #############################
+cp/ex03
+cp/ex04
 cp/ex05
 cp/ex06
 cp/ex07
 cp/ex08
-#cp/ex09
-#cp/ex10
+cp/ex09
+cp/ex10
 cp/ex11
 cp/ex12
+cp/ex13
 cp/exam
-cp/project1
-# cp/project2
+#cp/project1
+cp/project2
 cp/project3
 cp/project4
-#cp/project5
+cp/project5
 cp/project6
+cp/tests/tests_week01.py
