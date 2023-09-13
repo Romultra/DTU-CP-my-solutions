@@ -6,5 +6,9 @@ def normal_weight(height:float):
 
     :param height: the height.
     """
-    # TODO: Code has been removed from here.
-    raise NotImplementedError("Insert your solution and remove this error.")
+    lower_limit = math.ceil(18.5 * height**2)
+    higher_limit = math.floor(25 * height**2)
+    
+    print(f'Normal weight is between {lower_limit} and {higher_limit} kg.')
+normal_weight(1.47)     # Output : 'Normal weight is between 40 and 54 kg.'
+normal_weight(1.96)     # Output : 'Normal weight is between 72 and 96 kg.'
