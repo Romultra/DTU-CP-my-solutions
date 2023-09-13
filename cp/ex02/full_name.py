@@ -5,5 +5,5 @@ def full_name(first_name:str, last_name:str):
     :param first_name: your first name.
     :param last_name: your last name.
     """
-    # TODO: Code has been removed from here.
-    raise NotImplementedError("Insert your solution and remove this error.")
+    print(f'{first_name} {last_name}')
+full_name('Romeo', 'Estezet')
