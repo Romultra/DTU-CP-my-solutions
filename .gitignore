@@ -9,21 +9,15 @@ cache.db
 *.artifacts.pkl
 .coveragerc
 *_tests_complete_grade.py
+tmp.txt
+tmp.zip
 # Lock file. DISABLE checking with gitlab (and syncing), so you *wnat* this on your computer, but *not* on the students computer.
 **/unitgrade_data/dont_check_remote.lock
+cp/ex03/simple_function.py
+cp/tests/unitgrade_data/Week01Dummy.pkl
+cp/tests/unitgrade_data/Week01Palindrome.pkl
 
 ######################## Comment these out upon release. #############################
-cp/ex03
-cp/ex04
-cp/ex05
-cp/ex06
-cp/ex07
-cp/ex08
-cp/ex09
-cp/ex10
-cp/ex11
-cp/ex12
-cp/ex13
 cp/exam
 #cp/project1
 cp/project2
@@ -32,3 +26,12 @@ cp/project4
 cp/project5
 cp/project6
 cp/tests/tests_week01.py
+*04*
+*05*
+*06*
+*07*
+*08*
+*09*
+*10*
+*11*
+*12*

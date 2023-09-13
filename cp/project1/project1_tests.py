@@ -7,83 +7,79 @@ import unittest
 from unitgrade import UTestCase, Report
 import math
 
+def string_fixer(s):
+    return s.strip().replace('  ', ' ')
 
 class TestNormalWeight(UTestCase):
-    @unittest.mock.patch("sys.stdout", new_callable=io.StringIO)
-    def test_normal_weight_01(self, mock_stdout):
+    
+    def test_normal_weight_01(self):
         from cp.ex02.normal_weight import normal_weight
-
-        normal_weight(1.47)
-        out = mock_stdout.getvalue()
-        self.assertEqual(out.strip(), "Normal weight is between 40 and 54 kg.")
-
-    @unittest.mock.patch("sys.stdout", new_callable=io.StringIO)
-    def test_normal_weight_02(self, mock_stdout):
+        with unittest.mock.patch('sys.stdout', new=io.StringIO()) as mock_stdout:
+            normal_weight(1.47)
+            out = mock_stdout.getvalue()
+            self.assertEqual(string_fixer(out), string_fixer("Normal weight is between 40 and 54 kg."))
+    
+    def test_normal_weight_02(self):
         from cp.ex02.normal_weight import normal_weight
-
-        normal_weight(1.96)
-        out = mock_stdout.getvalue()
-        self.assertEqual(out.strip(), "Normal weight is between 72 and 96 kg.")
+        with unittest.mock.patch('sys.stdout', new=io.StringIO()) as mock_stdout:
+            normal_weight(1.96)
+            out = mock_stdout.getvalue()
+            self.assertEqual(string_fixer(out), string_fixer("Normal weight is between 72 and 96 kg."))
 
 
 
 
 class TestSurvivalTemperature(UTestCase):
-    @unittest.mock.patch("sys.stdout", new_callable=io.StringIO)
-    def test_survival_temperature_01(self, mock_stdout):
+    def test_survival_temperature_01(self):
         from cp.ex02.survival_temperature import survival_temperature
+        with unittest.mock.patch('sys.stdout', new=io.StringIO()) as mock_stdout:
+            survival_temperature(186,0.15)
+            out = mock_stdout.getvalue()
+            self.assertEqual(string_fixer(out), string_fixer("Survival temperature is -5.0 degrees."))
 
-        survival_temperature(186,0.15)
-        out = mock_stdout.getvalue()
-        self.assertEqual(out.strip(), "Survival temperature is -5.0 degrees.")
-
-    @unittest.mock.patch("sys.stdout", new_callable=io.StringIO)
-    def test_survival_temperature_02(self, mock_stdout):
+    
+    def test_survival_temperature_02(self):
         from cp.ex02.survival_temperature import survival_temperature
-
-        survival_temperature(356,0.33)
-        out = mock_stdout.getvalue()
-        self.assertEqual(out.strip(), "Survival temperature is -7.0 degrees.")
+        with unittest.mock.patch('sys.stdout', new=io.StringIO()) as mock_stdout:
+            survival_temperature(356,0.33)
+            out = mock_stdout.getvalue()
+            self.assertEqual(string_fixer(out), string_fixer("Survival temperature is -7.0 degrees."))
 
 
 
 
 class TestUnitConversion(UTestCase):
-    @unittest.mock.patch("sys.stdout", new_callable=io.StringIO)
-    def test_unit_conversion_01(self, mock_stdout):
+    def test_unit_conversion_01(self):
         from cp.ex02.unit_conversion import unit_conversion
-
-        unit_conversion(4, 3)
-        out = mock_stdout.getvalue()
-        self.assertEqual(out.strip(), "4 ft 3 in is equal to 130 cm.")
-
-    @unittest.mock.patch("sys.stdout", new_callable=io.StringIO)
-    def test_unit_conversion_02(self, mock_stdout):
+        with unittest.mock.patch('sys.stdout', new=io.StringIO()) as mock_stdout:
+            unit_conversion(4, 3)
+            out = mock_stdout.getvalue()
+            self.assertEqual(string_fixer(out), string_fixer("4 ft 3 in is equal to 130 cm."))
+    
+    def test_unit_conversion_02(self):
         from cp.ex02.unit_conversion import unit_conversion
-
-        unit_conversion(7, 2)
-        out = mock_stdout.getvalue()
-        self.assertEqual(out.strip(), "7 ft 2 in is equal to 218 cm.")
+        with unittest.mock.patch('sys.stdout', new=io.StringIO()) as mock_stdout:
+            unit_conversion(7, 2)
+            out = mock_stdout.getvalue()
+            self.assertEqual(string_fixer(out), string_fixer("7 ft 2 in is equal to 218 cm."))
 
 
 
 
 class TestHadlock(UTestCase):
-    @unittest.mock.patch("sys.stdout", new_callable=io.StringIO)
-    def test_hadlock_01(self, mock_stdout):
+    def test_hadlock_01(self):
         from cp.ex02.hadlock import hadlock
+        with unittest.mock.patch('sys.stdout', new=io.StringIO()) as mock_stdout:
+            hadlock(35, 36, 12)
+            out = mock_stdout.getvalue()
+            self.assertEqual(string_fixer(out), string_fixer("The estimated fetal weight is 5820.8 g."))
 
-        hadlock(35, 36, 12)
-        out = mock_stdout.getvalue()
-        self.assertEqual(out.strip(), "The estimated fetal weight is 5820.8 g.")
-
-    @unittest.mock.patch("sys.stdout", new_callable=io.StringIO)
-    def test_hadlock_02(self, mock_stdout):
+    def test_hadlock_02(self):
         from cp.ex02.hadlock import hadlock
-
-        hadlock(28.6, 29.6, 6.3)
-        out = mock_stdout.getvalue()
-        self.assertEqual(out.strip(), "The estimated fetal weight is 2070.0 g.")
+        with unittest.mock.patch('sys.stdout', new=io.StringIO()) as mock_stdout:
+            hadlock(28.6, 29.6, 6.3)
+            out = mock_stdout.getvalue()
+            self.assertEqual(string_fixer(out), string_fixer("The estimated fetal weight is 2070.0 g."))
 
 
 
