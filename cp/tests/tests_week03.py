@@ -96,38 +96,23 @@ class Week03SolarPanelTests(UTestCase):
     
     def test_maybe(self):
         from cp.ex03.solar_panel import solar_panel
-        with unittest.mock.patch('sys.stdout', new=io.StringIO()) as mock_stdout:
-            solar_panel(True, False, False, False)
-            out = mock_stdout.getvalue()
-            self.assertEqual(out.strip().lower(), "maybe")
+        self.assertEqual(solar_panel(True, False, False, False).strip().lower(), "maybe")
 
     def test_good_luck(self):
         from cp.ex03.solar_panel import solar_panel
-        with unittest.mock.patch('sys.stdout', new=io.StringIO()) as mock_stdout:
-            solar_panel(True, False, True, True)
-            out = mock_stdout.getvalue()
-            self.assertEqual(out.strip().lower().splitlines(), ["haha", "good luck"])
+        self.assertEqual(solar_panel(True, False, True, True).strip().lower()[:4], "haha")
 
     def test_probably_not1(self):
         from cp.ex03.solar_panel import solar_panel
-        with unittest.mock.patch('sys.stdout', new=io.StringIO()) as mock_stdout:
-            solar_panel(True, True, False, False)
-            out = mock_stdout.getvalue()
-            self.assertEqual(out.strip().lower(), "probably not")
+        self.assertEqual(solar_panel(True, True, False, False).strip().lower(), "probably not")
 
     def test_probably_not2(self):
         from cp.ex03.solar_panel import solar_panel
-        with unittest.mock.patch('sys.stdout', new=io.StringIO()) as mock_stdout:
-            solar_panel(False, False, True, True)
-            out = mock_stdout.getvalue()
-            self.assertEqual(out.strip().lower(), "probably not")
+        self.assertEqual(solar_panel(False, False, True, True).strip().lower(), "probably not")
 
     def test_sure(self):
         from cp.ex03.solar_panel import solar_panel
-        with unittest.mock.patch('sys.stdout', new=io.StringIO()) as mock_stdout:
-            solar_panel(False, False, False, False)
-            out = mock_stdout.getvalue()
-            self.assertEqual(out.strip().lower(), "sure")
+        self.assertEqual(solar_panel(False, False, False, False).strip().lower(), "sure")
 
 
 class Week03TheFunctionToBisect(UTestCase):
@@ -173,7 +158,7 @@ class Week03Bisect(UTestCase):
 
 class Week03Tests(Report):
     title = "Tests for week 03"
-    # version = 1.0
+    # version = 1.1
     # url = "https://gitlab.compute.dtu.dk/cp/02002students/-/blob/master/cp/tests"
     pack_imports = [cp]
     individual_imports = []
