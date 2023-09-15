@@ -7,4 +7,11 @@ def compare_numbers(first_number:int, second_number:int) -> str:
     :param second_number: second number.
     :return: string stating which number is the greatest.
     """
-    # TODO: Code has been removed from here. 
+    if first_number > second_number :
+        greater_number = "first"
+    else :
+        greater_number = "second"
+    
+    return f"The {greater_number} number has the greatest numerical value"
+
+print(compare_numbers(5,2))     # Output : 'The first number has the greatest numerical value'
