@@ -8,10 +8,8 @@ def compare_numbers(first_number:int, second_number:int) -> str:
     :return: string stating which number is the greatest.
     """
     if first_number > second_number :
-        greater_number = "first"
+        return "the first number is greater"
+    elif first_number < second_number :
+        return "the second number is greater"
     else :
-        greater_number = "second"
-    
-    return f"The {greater_number} number has the greatest numerical value"
-
-print(compare_numbers(5,2))     # Output : 'The first number has the greatest numerical value'
+        return 'the numbers are equal'

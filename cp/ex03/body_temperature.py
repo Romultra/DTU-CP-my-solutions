@@ -6,4 +6,13 @@ def body_temperature(temperature):
     :param temperature: The temperature in degrees Celsius.
     :return: The body's response as a string.
     """
-    # TODO: Code has been removed from here. 
+    if temperature < 35:
+        return "Hypothermia"
+    elif 35 <=temperature <= 37:
+        return "Normal"
+    elif 37 < temperature <= 38:
+        return "Slight fever"
+    elif 38 <temperature <= 39:
+        return "Fever"
+    elif temperature > 39:
+        return "Hyperthermia"

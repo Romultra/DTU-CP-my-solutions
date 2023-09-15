@@ -9,4 +9,11 @@ def exponential(x : float, n : int) -> float:
     :param n: the power :math:`n`.
     :return: the computed value.
     """
-    # TODO: Code has been removed from here. 
+    if n == 0 :
+        return 1
+    
+    elif n < 0 :
+        return 1/exponential(x,-n)
+    
+    else :
+        return x*exponential(x, n-1)

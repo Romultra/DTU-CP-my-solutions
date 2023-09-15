@@ -9,4 +9,10 @@ def bac_calculator(alcohol_consumed: float, weight: float, gender: str, time: fl
     :param time: The time elapsed since alcohol consumption in hours (float)
     :return: The calculated blood alcohol concentration (BAC) as a float value.
     """
-    # TODO: Code has been removed from here. 
+    if gender == "male":
+        distribution_ratio = 0.68
+        rate_of_metabolization = 0.015
+    elif gender == "female":
+        distribution_ratio = 0.55
+        rate_of_metabolization = 0.017
+    return alcohol_consumed/(distribution_ratio*weight) * 100 - rate_of_metabolization*time

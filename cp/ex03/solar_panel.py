@@ -9,4 +9,14 @@ def solar_panel(move : bool, swap : bool, hot : bool, empty : bool) -> str:
     :param empty: are there other empty places near the object?
     :return: Whether you should put solar panels on the object as a string.
     """
-    # TODO: Code has been removed from here. 
+    if move and not(swap) and not(hot) :
+        return 'maybe'
+    
+    elif move and not(swap) and (hot) :
+        return 'haha, good luck'
+    
+    elif (move and swap)  or (not(move) and empty):
+        return 'probably not'
+    
+    elif not(move) and not(empty) :
+        return 'sure'
