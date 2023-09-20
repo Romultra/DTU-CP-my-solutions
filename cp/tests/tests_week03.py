@@ -133,11 +133,11 @@ class Week03IsThereARoot(UTestCase):
 
     def test_no_root_exists(self):
         from cp.ex03.bisect import is_there_a_root
-        self.assertFalse(is_there_a_root(3.2, 3.8))  # no root exists between 0 and 2pi
+        self.assertIs(is_there_a_root(3.2, 3.8), False)  # no root exists between 0 and 2pi
 
     def test_root_not_found(self):
         from cp.ex03.bisect import is_there_a_root
-        self.assertFalse(is_there_a_root(1, 3.5))
+        self.assertIs(is_there_a_root(1, 3.5), False)
 
 
 class Week03Bisect(UTestCase):

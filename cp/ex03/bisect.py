@@ -4,17 +4,12 @@ import math
 def f(x : float) -> float:
     r"""Find the roots of this function.
 
-    You should implement the function :math:`f(x)` here. It is defined as:
+    You should implement the function f(x) here.
 
-    .. math::
-
-        f(x) = \sin(3\cos(\frac{1}{2} x^2))
-
-    :param x: The value to evaluate the function in :math:`x`
-    :return: :math:`f(x)`.
+    :param x: The value to evaluate the function in x
+    :return: f(x)
     """
-    Compute f(x) here.
-    # TODO: Code has been removed from here.
+    # TODO: Code has been removed from here. 
 
 
 def is_there_a_root(a : float, b : float) -> bool:
