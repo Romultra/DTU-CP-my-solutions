@@ -75,7 +75,7 @@ class Week04Parenthesis(UTestCase):
         self.assertEqual(find_innermost_part('(3+x)'), '3+x')
         self.assertEqual(find_innermost_part('3+x'), '3+x')
         self.assertEqual(find_innermost_part('3x((y+2)y+x)'), 'y+2')
-        self.assertEqual(find_innermost_part('3x((y+(1 - q^2)y+x)'), '1 - q^2')
+        self.assertEqual(find_innermost_part('3x((y+(1 - q^2)y+x))'), '1 - q^2')
 
 
     def test_find_index_of_equality(self):
