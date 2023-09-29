@@ -20,13 +20,13 @@ cp/tests/unitgrade_data/Week01Palindrome.pkl
 ######################## Comment these out upon release. #############################
 cp/exam
 #cp/project1
-cp/project2
+#cp/project2
 cp/project3
 cp/project4
 cp/project5
 cp/project6
 cp/tests/tests_week01.py
-*04*
+#*04*
 *05*
 *06*
 *07*
