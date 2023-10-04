@@ -1,6 +1,6 @@
 """Exercise 6.3-6.4."""
 
-def word_histogram(lines : list) -> list:
+def word_histogram(lines : list) -> dict:
     """Return the word count histogram from the input lines.
 
     :param lines: The lines that are analyzed for word count.
@@ -20,19 +20,15 @@ def extract_keyword(lines : str, ignore_list : list) -> dict:
 
 if __name__ == "__main__":
     # here you can try out your functions
-    print(word_histogram('I think therefore I am.'))
+    lines = ['This is the first sentence of text for you', 'This is the second sentence of text', 'This is for you']
+    print("word_histogram")
+    print(word_histogram(lines))
 
     # Ignore list of common words
-    ignore_list = [
-    'a', 'an', 'the', 'above', 'across', 'against', 'along', 'among', 'around',
-    'at', 'before', 'behind', 'below', 'beneath', 'beside', 'between', 'by',
-    'down', 'from', 'in', 'into', 'near', 'of', 'off', 'on', 'to', 'toward',
-    'under', 'upon', 'with', 'within','function', 'for', 'and', 'nor', 'but', 'or', 'yet', 'so']
-
-    # Example usage:
-    lines = [    "Write the function word_histogram, which takes as argument a list containing lines of a text.",    "The function should ... ... ... ... ... make a histogram of words that occur in the text."]
-
-    keywords_result = extract_keyword(lines, ignore_list)
+    ignore_list = ['the', 'be', 'to', 'of', 'and', 'a', 'in', 'is', 'have', 'I']
 
     # Print the 5 most occurring keywords
-    print(keywords_result)
+    print("extract_keywords")
+    print(extract_keyword(lines, ignore_list))
+
+    
