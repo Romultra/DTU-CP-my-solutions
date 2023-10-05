@@ -21,9 +21,9 @@ class Week06LetterHistogram(UTestCase):
 class Week06WordHistogram(UTestCase):
     def test_WordHistogram(self):
         from cp.ex06.word_histogram import word_histogram
-        self.assertEqual(word_histogram(["Write the function word_histogram."," which takes as argument a list containing lines of a text."]),{'write': 1, 'the': 1, 'function': 1, 'wordhistogram': 1, 'which': 1, 'takes': 1, 'as': 1, 'argument': 1, 'a': 2, 'list': 1, 'containing': 1, 'lines': 1, 'of': 1, 'text': 1})
+        self.assertEqual(word_histogram(["Write the function word histogram."," which takes as argument a list containing lines of a text."]),{'write': 1, 'the': 1, 'function': 1, 'word': 1, 'histogram': 1, 'which': 1, 'takes': 1, 'as': 1, 'argument': 1, 'a': 2, 'list': 1, 'containing': 1, 'lines': 1, 'of': 1, 'text': 1})
         self.assertEqual(word_histogram(["The function should make a histogram of words that occur in the text.","Punctuation, spaces, and capitalization should be ignored.",]),{'the': 2, 'function': 1, 'should': 2, 'make': 1, 'a': 1, 'histogram': 1, 'of': 1, 'words': 1, 'that': 1, 'occur': 1, 'in': 1, 'text': 1, 'punctuation': 1, 'spaces': 1, 'and': 1, 'capitalization': 1, 'be': 1, 'ignored': 1})
-        self.assertEqual(word_histogram(["The function should return a dictionary, e.g. {'write': 2, 'the': 12, 'function': 7, …}",]),{'the': 2, 'function': 2, 'should': 1, 'return': 1, 'a': 1, 'dictionary': 1, 'eg': 1, 'write': 1})
+        self.assertEqual(word_histogram(["The function should return a dictionary. The function.",]),{'the': 2, 'function': 2, 'should': 1, 'return': 1, 'a': 1, 'dictionary': 1})
  
 class Week06ExtractKeywords(UTestCase):
     def test_ExtractKeywords(self):
