@@ -77,7 +77,7 @@ class Week05TicTacToeMain(UTestCase):
             self.assertEqual(out[3],"Player O won!")
 
 class Week06SpellCheck(UTestCase):
-    def test_SpellCheck(self):
+    def test_spell_check(self):
         from cp.ex06.spell_check import spell_check
         corrections = {'occurence': 'occurrence', 'apsolute': 'absolute', 'teh': 'the', 'acess': 'access', 'occured': 'occurred', 'exampel': 'example'}
         text = "The apsolute acess to teh data occured in this exampel"

@@ -34,7 +34,7 @@ class Week06ExtractKeywords(UTestCase):
         self.assertEqual(extract_keyword(lines2,ignore_list),{'they': 6, 'me': 5, 'like': 4, 'universe': 4, 'are': 3})
 
 class Week06SpellCheck(UTestCase):
-    def test_SpellControl(self):
+    def test_spell_check(self):
         from cp.ex06.spell_check import spell_check
         corrections = {'occurence': 'occurrence', 'apsolute': 'absolute', 'teh': 'the', 'acess': 'access', 'occured': 'occurred', 'exampel': 'example'}
         text = "The apsolute acess to teh data occured in this exampel"
