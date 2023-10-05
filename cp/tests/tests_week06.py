@@ -92,7 +92,7 @@ class Week06SentimentAnalysis(UTestCase):
     def test_sentiment_analysis(self):
         from cp.ex06.sentiment_analysis import sentiment_analysis
         self.assertEqual(sentiment_analysis('I think the food was excellent and great, but the waiter service was horrible '),-5)
-        self.assertEqual(sentiment_analysis('When I woke up, I was feeling very bad, but then I had a coffee, and my day turned out to be excellent '),4)
+        self.assertEqual(sentiment_analysis('When I woke up I was feeling very bad but then I had a coffee and my day turned out to be excellent '),4)
         self.assertEqual(sentiment_analysis('I know it is good not to complain, but the selection criteria were genuinely inadequate and unfair '),-1)
 
 

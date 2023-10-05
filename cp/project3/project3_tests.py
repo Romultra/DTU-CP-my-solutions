@@ -76,13 +76,18 @@ class Week05TicTacToeMain(UTestCase):
             self.assertEqual(out[2], "O--")
             self.assertEqual(out[3],"Player O won!")
 
-class Week06SentimentAnalysis(UTestCase):
-    def test_sentiment_analysis(self):
-        from cp.ex06.sentiment_analysis import sentiment_analysis
-        self.assertEqual(sentiment_analysis('I think the food was excellent and great, but the waiter service was horrible '),-5)
-        self.assertEqual(sentiment_analysis('When I woke up, I was feeling very bad, but then I had a coffee, and my day turned out to be excellent '),4)
-        self.assertEqual(sentiment_analysis('I know it is good not to complain, but the selection criteria were genuinely inadequate and unfair '),-1)
-
+class Week06SpellCheck(UTestCase):
+    def test_SpellControl(self):
+        from cp.ex06.spell_check import spell_check
+        corrections = {'occurence': 'occurrence', 'apsolute': 'absolute', 'teh': 'the', 'acess': 'access', 'occured': 'occurred', 'exampel': 'example'}
+        text = "The apsolute acess to teh data occured in this exampel"
+        self.assertEqual(spell_check(text, corrections),"The absolute access to the data occurred in this example")
+        text2= "The first occurence of teh mean apsolute error formula look at teh exampel below"
+        self.assertEqual(spell_check(text2, corrections),"The first occurrence of the mean absolute error formula look at the example below")
+        self.assertEqual(spell_check("We can handle teh damag", {'damag': 'damage'}),"We can handle teh damage")
+        self.assertEqual(spell_check("We can handle teh damag.",{'damag': 'damage'}),"We can handle teh damage.")
+        text3 = "The apsolute acess to teh, data occured in this exampel."
+        self.assertEqual(spell_check(text3, corrections),"The absolute access to the, data occurred in this example.")
 
 class Week06MultiTap(UTestCase):
     def test_multi_tap(self):
@@ -105,7 +110,7 @@ class Project3(Report):
                 (Week05TicTacToePrintBoard,5),
                 (Week05TicTacToeGetGameState,10),
                 (Week05TicTacToeUpdateBoard,10),
-                (Week06SentimentAnalysis,20),
+                (Week06SpellCheck,20),
                 (Week06MultiTap,20),
                 ]
     import cp
