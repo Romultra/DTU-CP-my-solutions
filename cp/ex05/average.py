@@ -6,4 +6,10 @@ def calculate_average(nums: list) -> float:
     :param nums: list of numbers
     :return: average of list
     """
-    # TODO: Code has been removed from here. 
+    sum=0
+    for i in nums:
+        sum = sum + i
+    
+    return sum/len(nums)
+
+print(calculate_average([2,4,2,4]))

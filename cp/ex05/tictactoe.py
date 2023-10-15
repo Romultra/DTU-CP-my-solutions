@@ -25,11 +25,16 @@ def print_board(board: list):
     # TODO: Code has been removed from here. 
 
 def tictactoe(board: list, player: str, position: list) -> list:
-    """Play a move in the Tic-Tac-Toe game and determine the winner.
+
+    board = update_board(board, player, position)
+    print_board(board)
+
+    game_state = get_game_state(board)
+
+    if game_state == "X":
+        print('Player X won!')
     
-    :param board: List of lists of strings representing the game board.
-    :param player: Player making the move ('X' or 'O').
-    :param position: List containing two integer indices [row, column] indicating the position to make a move.
-    :return: Updated game board after the move.
-    """
-    # TODO: Code has been removed from here. 
+    elif game_state == "O":
+        print('Player O won!')
+    
+    return board
