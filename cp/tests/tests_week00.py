@@ -18,8 +18,8 @@ class SayHelloWorld(UTestCase):
 
 class Week00Tests(Report):
     title = "Tests for week 00 (Try to complete this before the course start)"
-    version = 1.0
-    url = "https://gitlab.compute.dtu.dk/cp/02002students/-/blob/master/cp/tests"
+    # version = 1.0
+    # url = "https://gitlab.compute.dtu.dk/cp/02002students/-/blob/master/cp/tests"
     pack_imports = [cp]
     individual_imports = []
     questions = [(SayHelloWorld, 10)]
