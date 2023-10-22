@@ -7,7 +7,36 @@ def multi_tap(keys : list, times : list) -> str:
     :param times: The list of times of when the keys were pressed.
     :return: The string corresponding to the key presses.
     """
-    # TODO: Code has been removed from here. 
+
+    text=''
+    keypad_dict = {0: [' '],
+    2: ['A', 'B', 'C'],
+    3: ['D', 'E', 'F'],
+    4: ['G', 'H', 'I'],
+    5: ['J', 'K', 'L'],
+    6: ['M', 'N', 'O'],
+    7: ['P', 'Q', 'R', 'S'],
+    8: ['T', 'U', 'V'],
+    9: ['W', 'X', 'Y', 'Z']}
+    i=0
+    while i < len(keys):
+        t=0
+        
+        if (i==len(keys)-1):
+            text+=keypad_dict[keys[i]][0]
+            i+=1
+        elif keys[i]==keys[i+1] and times[i+1]-times[i]>0.5:
+            text+=keypad_dict[keys[i]][0]
+            i+=1
+        else:
+            while (keys[i]==keys[i+1] and times[i+1]-times[i]<0.5):
+                t+=1      
+                i+=1 
+                if (i==len(keys)-1):
+                    break
+            text+=keypad_dict[keys[i]][t]
+            i+=1
+    return text
     
 
 

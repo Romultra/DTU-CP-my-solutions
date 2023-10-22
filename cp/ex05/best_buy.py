@@ -28,6 +28,3 @@ def best_buy(prices: list, money: int, start_index: int, reverse: bool) -> int:
             i += direction
         
     return counter
-
-print(best_buy([3, 2, 1, 3, 5], 10, 0, False))
-print(best_buy([3, 2, 1, 3, 5], 15, 4, True))
