@@ -7,4 +7,8 @@ def water_height(h0: int, r: list) -> int:
     :param: r: list of rain showers
     :return: height of water after days of rain 
     """
-    # TODO: Code has been removed from here. 
+    for showers in r:
+        h0 += showers - 2
+        if h0 < 0:
+            h0 = 0
+    return h0
