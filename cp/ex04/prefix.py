@@ -8,7 +8,11 @@ def common_prefix(word1 : str, word2 : str) -> str:
     :param word2: Second word
     :return: The longest common prefix.
     """
-    # TODO: Code has been removed from here. 
+    i = 0
+    while word1[i] == word2[i] and i<len(word1) and i<len(word2):
+        i+=1
+    
+    return word1[0:i]
 
 def common_prefix3(word1 : str, word2 : str, word3 : str) -> str:
     """
@@ -19,7 +23,11 @@ def common_prefix3(word1 : str, word2 : str, word3 : str) -> str:
     :param word3: Third word
     :return: The longest common prefix.
     """
-    # TODO: Code has been removed from here. 
+    i = 0
+    while word1[i] == word2[i] == word3[i] and i<len(word1) and i<len(word2) and i<len(word3):
+        i+=1
+    
+    return word1[0:i]
 
 
 if __name__ == "__main__":
