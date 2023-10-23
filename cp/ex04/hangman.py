@@ -7,8 +7,11 @@ def is_word_guessed(secret_word : str, letters_guessed : str) -> bool:
     :param letters_guessed: A ``str`` containing the letters that have currently been guessed
     :return: True if and only if all letters in ``secret_word`` have been guessed.
     """
-    # TODO: Code has been removed from here. 
+    for char in secret_word:
+        if char not in letters_guessed:
+            return False
 
+    return True
 
 def get_available_letters(letters_guessed : str) -> str:
     """
@@ -21,7 +24,10 @@ def get_available_letters(letters_guessed : str) -> str:
     :param letters_guessed: A `str` representing the letters the user has already guessed
     :return: A `str` containing the letters the user has not guessed at yet.
     """
-    # TODO: Code has been removed from here. 
+    available_letter = 'abcdefghijklmnopqrstuvwxyz'
+    for letter in letters_guessed:
+        available_letter = available_letter.replace(letter, '')
+    return available_letter
 
 def get_guessed_word(secret_word : str, letters_guessed : str) -> str:
     """Format the secret word for the user by removing letters that have not been guessed yet.
@@ -34,7 +40,12 @@ def get_guessed_word(secret_word : str, letters_guessed : str) -> str:
     :param letters_guessed:  A ``str`` containing which letters have been guessed so far
     :return: A ``str``, comprised of letters, underscores (_), and spaces that represents which letters in secret_word have been guessed so far.
     """
-    # TODO: Code has been removed from here. 
+    guessed_word = secret_word
+    for letter in secret_word:
+        if letter not in letters_guessed:
+            guessed_word = guessed_word.replace(letter, '_ ')
+    return guessed_word
+            
 
 def hangman(secret_word : str, guesses : int):
     """
@@ -53,8 +64,42 @@ def hangman(secret_word : str, guesses : int):
     :param secret_word: The secret word to guess, for instance ``"cow"``
     :param guesses: The number of available guesses, for instance ``6``
     """
-    # TODO: Code has been removed from here. 
+    print(f'Hangman! To save Bob, you must guess a {len(secret_word)} letter word within {guesses} attempts.')
+    max_guesses = guesses
+    letters_guessed = ''
+    lost = False
+    while guesses > 0:
+        old_guessed_word = get_guessed_word(secret_word, letters_guessed)
 
+        print('----')
+        print(f'You have {guesses} guesses left.')
+        user_input = input(f'The available letters are: {get_available_letters(letters_guessed)}. Guess a letter and press enter:')
+        for char in user_input:
+            if char not in get_available_letters(letters_guessed) and char != '':
+                print('Game over :-(. Your score is 0 points.')
+                lost = True
+        if lost:
+            break
+
+        letters_guessed = letters_guessed + user_input
+        guesses -= 1
+
+        if is_word_guessed(secret_word, letters_guessed) == True:
+            print(f'Success! You guessed \'{secret_word}\' in {max_guesses-guesses} tries.')
+            print(f'Your score is {len(secret_word)*guesses}')
+            break
+        
+        guessed_word = get_guessed_word(secret_word, letters_guessed)
+        if guessed_word != old_guessed_word:
+            print(f'Good guess: {guessed_word}')
+        else:
+            print(f'Oh no: {guessed_word}')
+
+        if guesses == 0:
+            print('Game over :-(. Your score is 0 points.')
+        
+
+        
 
 
 if __name__ == "__main__":
@@ -67,4 +112,4 @@ if __name__ == "__main__":
     print("Available letters when we have tried 'abcdefghijk'; this should be about half the alphabet: ", get_available_letters('abcdefghijk'))
 
     print("Lets launch hangman. Try the inputs in the exercise description and see if you get the same")
-    hangman("cow", 4)
+    hangman("doggy", guesses=8)
