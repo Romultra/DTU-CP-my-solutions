@@ -7,7 +7,12 @@ def get_people_by_language(language: str, name_languages: dict)-> list:
     :param name_languages: A dictionary containing the names of people along with their spoken languages
     :return: The names of people that speak the desired language.
     """
-    # TODO: Code has been removed from here. 
+    name_list = []
+    for key in name_languages:
+        if language in name_languages[key]:
+            name_list.append(key)
+    return name_list
+
 if __name__ == "__main__":
     name_languages = {
     'Peter': ['Danish', 'English'],
