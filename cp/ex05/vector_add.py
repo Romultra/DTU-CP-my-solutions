@@ -7,4 +7,4 @@ def vector_add(v: list, w: list) -> list:
     :param w: vector 2 (list of numbers, same length as v)
     :return: sum of v and w (list of number)
     """
-    # TODO: Code has been removed from here. 
+    return [v[0]+w[0], v[1]+w[1], v[2]+w[2]]

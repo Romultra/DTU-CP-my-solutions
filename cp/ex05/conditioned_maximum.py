@@ -7,7 +7,11 @@ def conditioned_maximum(nums: list, threshold: float) -> float:
     :param threshold: limit for maximum value   
     :return: maximum of list thats smaller than the threshold
     """
-    # TODO: Code has been removed from here. 
+    maximum = 0
+    for num in nums:
+        if num < threshold and num > maximum:
+            maximum = num
+    return maximum
 
 
 def conditioned_maximum_name(nums: list, names: list, threshold: float) -> str:
@@ -18,4 +22,10 @@ def conditioned_maximum_name(nums: list, names: list, threshold: float) -> str:
     :param threshold: limit for maximum value   
     :return: animal name with the corresponding maximum height, which is shorter than the threshold height.
     """
-    # TODO: Code has been removed from here. 
+    maximum = 0
+    for i, num in enumerate(nums):
+        if num < threshold and num > maximum:
+            maximum = num
+            maximum_index = i
+
+    return names[maximum_index]

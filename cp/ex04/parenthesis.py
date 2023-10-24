@@ -7,7 +7,16 @@ def matching(expression :str) -> bool:
     :param expression: An expression containing zero or more parenthesis.
     :return: ``True`` if the number of open/close parenthesis match, otherwise ``False``
     """
-    # TODO: Code has been removed from here. 
+    count = 0
+    for char in expression:
+        if char == '(':
+            count += 1
+        elif char == ')':
+            count -= 1
+    if count == 0:
+        return True
+    else:
+        return False
 
 def find_innermost_part(s : str) -> str:
     """Find the innermost part of a mathematical expression.
@@ -19,7 +28,22 @@ def find_innermost_part(s : str) -> str:
     :param s: The mathematical expression as a ``str``
     :return: The innermost part as a ``str``
     """
-    # TODO: Code has been removed from here. 
+    count = 0
+    best_count = 0
+    best_pos = -1
+    best_pos_end = len(s)
+    for i, char in enumerate(s):
+        if char == '(':
+            count += 1
+            if count > best_count:
+                best_count = count
+                best_pos = i
+        elif char == ')':
+            if best_count == count:
+                best_pos_end = i
+            count -= 1
+    
+    return s[best_pos+1:best_pos_end]
 
 
 def find_index_of_equality(expression : str) -> int:
@@ -39,8 +63,9 @@ def find_index_of_equality(expression : str) -> int:
     :param expression: An expression only consisting of opening and closing parenthesis.
     :return: The index ``i`` as an int.
     """
-    # TODO: Code has been removed from here. 
-
+    for i in range(len(expression)):
+        if expression[:i].count('(') == expression[i:].count(')'):
+            return i
 
 def print_the_dialogue(s : str):
     """Print all dialogue in a manuscript.
@@ -51,7 +76,21 @@ def print_the_dialogue(s : str):
 
     :param s: The manuscript as a ``str``.
     """
-    # TODO: Code has been removed from here. 
+    dialogue_list=[]
+    previous_char=''
+    previous_pos = 0
+    count = 0
+    for i, char in enumerate(s):
+        if char == previous_char == '\'':
+            count += 1
+            pos = i+1
+            if previous_pos != 0 and count%2 == 0:
+                dialogue_list.append(s[previous_pos:pos-2])
+            previous_pos = pos
+        previous_char = char
+
+    for dialogue in dialogue_list:
+        print(dialogue)
 
 
 
@@ -64,6 +103,10 @@ if __name__ == "__main__":
     print("Does the parenthesis match?", matching("2x(x+2"))
     print("Does the parenthesis match?", matching("2x)(x"))
     print("Does the parenthesis match?", matching("4x()(()))"))
+
+    print('y+x', find_innermost_part('(y+x)'))
+    print('x-1', find_innermost_part('3x(y+(x-1))'))
+    print('y+2', find_innermost_part('3x((y+2)y+x)'))
 
     s = "(())))("
 

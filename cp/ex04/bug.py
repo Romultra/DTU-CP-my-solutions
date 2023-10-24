@@ -11,7 +11,9 @@ def last_bug():
         | I have written my last bug |
         ------------------------------
     """
-    # TODO: Code has been removed from here. 
+    print('------------------------------')
+    print('| I have written my last bug |')
+    print('------------------------------')
 
 
 def nice_sign(msg : str):
@@ -27,8 +29,9 @@ def nice_sign(msg : str):
 
     :param msg: The message to enclose.
     """
-    # You can use len(msg) to get the number of characters and "-"*10 to repeat a character (try in the console!)
-    # TODO: Code has been removed from here. 
+    print('-'*(4+len(msg)))
+    print(f'| {msg} |')
+    print('-'*(4+len(msg)))
 
 
 if __name__ == "__main__":
