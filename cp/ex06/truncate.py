@@ -7,7 +7,18 @@ def truncate_values(float_list : list, settings: dict) -> list:
     :param settings: Dictionary containing the keys vmin, vmax and normalize with their corresponding values.
     :return: Truncated/Normalized+Truncated values.
     """
-    # TODO: Code has been removed from here. 
+    if settings['normalize']:
+        coef = max(float_list)
+        for i, num in enumerate(float_list):
+            float_list[i] = num / coef
+
+    for i, num in enumerate(float_list):
+        if num > settings['vmax']:
+            float_list[i] = settings['vmax']
+        elif num < settings['vmin']:
+            float_list[i] = settings['vmin']
+    
+    return float_list
 
 if __name__ == "__main__":
     # here you can try out your functions
