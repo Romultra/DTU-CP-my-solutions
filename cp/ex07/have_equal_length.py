@@ -7,4 +7,6 @@ def have_equal_length(a : tuple, b : tuple) -> bool:
     :param b: Tuple.
     :return: A boolean value.
     """
-    # TODO: Code has been removed from here. 
+    if len(a) == len(b):
+        return True
+    return False
