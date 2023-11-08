@@ -9,4 +9,20 @@ def growth_threshold_reached(path: str, threshold: float) -> float:
     
     :return: The average time point.
     """
-    # TODO: Code has been removed from here. 
+    time_points = []
+    for i in range(160):
+        with open(f'{path}/experiment_{i:03d}.csv', 'r') as f:
+            reader = csv.reader(f, quoting=csv.QUOTE_NONNUMERIC)
+            found = False
+            for j, value in enumerate(next(reader)):
+                if value > threshold:
+                    time_points.append(j)
+                    found = True
+                    break
+            if not(found):
+                time_points.append(10)
+    sum = 0
+    for time in time_points:
+        sum += time
+    average = sum/160
+    return average
