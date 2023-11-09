@@ -6,5 +6,12 @@ class Vector:
     def __init__(self, x, y):
         self.x = x
         self.y = y
+
     def dot(self, Vector):
         return self.x * Vector.x + self.y * Vector.y
+    
+    def scale(self, s):
+        return Vector(self.x * s, self.y * s)
+
+    def add(self, v):
+        return Vector(self.x + v.x, self.y + v.y)
