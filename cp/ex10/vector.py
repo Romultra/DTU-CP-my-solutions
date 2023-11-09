@@ -1,4 +1,7 @@
 """The code for vector operator overloading."""
+from typing import Any
+
+
 class Vector:
     r"""A class that represents a Vector, defined by the endpoint :math:`(x,y)`.""" 
 
@@ -16,3 +19,6 @@ class Vector:
     
     def __sub__(self, v2):
         return Vector(self.x - v2.x, self.y - v2.y)
+    
+    def __mul__(self, v2):
+        return self.x * v2.x + self.y * v2.y
