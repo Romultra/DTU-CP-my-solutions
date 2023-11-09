@@ -7,4 +7,4 @@ def last_difference(a : tuple, b : tuple) -> float:
     :param b: The second tuple.
     :return: The difference between the last elements of the two tuples.
     """
-    # TODO: Code has been removed from here. 
+    return a[len(a)-1] - b[len(b)-1]
