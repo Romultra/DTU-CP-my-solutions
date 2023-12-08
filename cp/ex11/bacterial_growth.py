@@ -6,7 +6,12 @@ def load_data() -> np.ndarray:
     
     :return: The data from the files in one array.
     """
-    # TODO: Code has been removed from here. 
+    data = np.zeros((160, 12))
+    for i in range(160):
+        filename = f'cp/ex08/files/experiments/experiment_{i:03}.csv'
+        data[i,:] = np.loadtxt(filename, delimiter=',')
+    return data
+
 def threshold_exceeded(data : np.ndarray, threshold: float) -> np.ndarray:
     """Return the index at which the threshold is exceeded for each experiment.
     
@@ -14,18 +19,22 @@ def threshold_exceeded(data : np.ndarray, threshold: float) -> np.ndarray:
     :param threshold: The threshold to compare against.
     :return: The index at which the threshold is exceeded for each row.
     """
-    # TODO: Code has been removed from here. 
+    indexs = np.zeros(160)
+    for i in range(160):
+        indexs[i] = np.argmax(data[i,:][data[i,:]<=threshold])+1
+    return indexs
 def get_mean(data : np.ndarray) -> np.ndarray:
     """Calculate the mean of the data.
     
     :param data: The data to calculate the mean of.
     :return: The mean of the data for each time-point.
     """
-    # TODO: Code has been removed from here. 
+    
+    return data.mean(0)
 def get_std(data : np.ndarray) -> np.ndarray:
     """Calculate the standard deviation of the data.
     
     :param data: The data to calculate the standard deviation of.
     :return: The standard deviation of the data for each time-point.
     """
-    # TODO: Code has been removed from here. 
+    return data.std(0)

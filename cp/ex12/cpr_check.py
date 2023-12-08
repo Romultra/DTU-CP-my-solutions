@@ -6,4 +6,4 @@ def cpr_check(cpr : str) -> bool:
     :param cpr: CPR number as str.
     :return: Boolean whether CPR is valid or not.
     """
-    # TODO: Code has been removed from here. 
+    

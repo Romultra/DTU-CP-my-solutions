@@ -1,5 +1,5 @@
 """Exercise 11.6: Indexing Images."""
-import numpy as np
+import numpy as numpy
 
 def extract_subimage(image: np.ndarray, start_point: tuple, size: tuple) -> np.ndarray:
     """Extract a subimage from an image.
@@ -10,4 +10,4 @@ def extract_subimage(image: np.ndarray, start_point: tuple, size: tuple) -> np.n
 
     :return: Subimage.
     """
-    # TODO: Code has been removed from here. 
+    return image[start_point[0]:start_point[0]+size[0],start_point[1]:start_point[1]+size[1]]

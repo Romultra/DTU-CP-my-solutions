@@ -6,7 +6,8 @@ def avg(data: np.ndarray) -> float:
     :param data: The array to average.
     :return: The average of the array.
     """
-    # TODO: 1 lines missing. 
+    return np.mean(data)
+
 def conditional_max(data: np.ndarray, threshold: float) -> float:
     """Return the maximum value in the array that is smaller than the threshold.
 
@@ -14,7 +15,8 @@ def conditional_max(data: np.ndarray, threshold: float) -> float:
     :param threshold: The threshold to compare against.
     :return: The maximum value in the array that is smaller than the threshold.
     """
-    # TODO: 1 lines missing. 
+    return np.max(data[data<threshold])
+
 def vector_add(a: np.ndarray, b: np.ndarray) -> np.ndarray:
     """Add two vectors together.
 
@@ -22,7 +24,8 @@ def vector_add(a: np.ndarray, b: np.ndarray) -> np.ndarray:
     :param b: The second vector.
     :return: The sum of the two vectors.
     """
-    # TODO: 1 lines missing. 
+    return a+b
+
 def count_multiples(data: np.ndarray, divisor: int) -> int:
     """Count the number of multiples of a number in an array.
 
@@ -30,7 +33,8 @@ def count_multiples(data: np.ndarray, divisor: int) -> int:
     :param divisor: The number to check for multiples of.
     :return: The number of multiples of the divisor in the array.
     """
-    # TODO: 1 lines missing. 
+    return data[data%divisor==0].shape[0]
+
 def return_multiples(data, divisor):
     """Return the multiples of a number in an array.
 
@@ -38,4 +42,4 @@ def return_multiples(data, divisor):
     :param divisor: The number to check for multiples of.
     :return: The multiples of the divisor in the array.
     """
-    # TODO: 1 lines missing. 
+    return data[data%divisor==0]
