@@ -6,4 +6,16 @@ def cpr_check(cpr : str) -> bool:
     :param cpr: CPR number as str.
     :return: Boolean whether CPR is valid or not.
     """
+    control = "432765432"
+    check_digit = 0
+    for i in range(9):
+        check_digit += int(control[i]) * int(cpr[i])
     
+    check_digit = check_digit % 11
+    check_digit = 11 - check_digit
+    
+    if check_digit == int(cpr[9]):
+        return True
+    
+    else:
+        return False
