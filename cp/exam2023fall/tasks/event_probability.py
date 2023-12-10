@@ -8,5 +8,7 @@ def event_probability(T: int, n: int) -> float:
     :return: The probability that an event with return period T will occur in the time period. 
     """
     return 1 - (1-(1/T))**n
+
+
 if __name__ == '__main__':
     print(event_probability(100, 25))

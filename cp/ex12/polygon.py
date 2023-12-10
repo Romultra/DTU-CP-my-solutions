@@ -25,4 +25,19 @@ class Polygon:
         return abs(A)
     
     def get_perimeter(self):
-        return sqrt((self.x[:len(self.x)-1] - np.roll(self.x, -1)[:len(self.x)-1])**2 + (self.y[:len(self.y)-1] - np.roll(self.y, -1)[:len(self.y)-1])**2)
+        return np.sum(np.sqrt((self.x - np.roll(self.x, -1))**2 + (self.y - np.roll(self.y, -1))**2))
+
+    def smooth_polygon(self, alpha):
+        self.x[1:len(self.x)-1] = (1-alpha) * self.x[1:len(self.x)-1] + (1/2)*alpha*(np.roll(self.x[1:len(self.x)-1], -1) + np.roll(self.x, 1))
+        self.y[1:len(self.y)-1] = (1-alpha) * self.y[1:len(self.y)-1] + (1/2)*alpha*(np.roll(self.y[1:len(self.y)-1], -1) + np.roll(self.y, 1))
+
+        self.x[0] = (1-alpha) * self.x[0] + (1/2)*alpha*(self.x[-1] + self.x[1])
+        self.y[0] = (1-alpha) * self.y[0] + (1/2)*alpha*(self.y[-1] + self.y[1])
+        
+        self.x[-1] = (1-alpha) * self.x[-1] + (1/2)*alpha*(self.x[-2] + self.x[0])
+        self.y[-1] = (1-alpha) * self.y[-1] + (1/2)*alpha*(self.y[-2] + self.y[0])
+
+P = Polygon([(24, 12), (40, 16), (36, 8), (44, 4), (28, 0), (18, 4), (12, 0), (0,4), (8, 12), (4, 16)])
+P.plot_polygon()
+P.smooth_polygon(0.5)
+P.plot_polygon()
