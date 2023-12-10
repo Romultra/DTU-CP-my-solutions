@@ -1,3 +1,4 @@
 dtumathtools
 unitgrade
+numpy
 -e .
